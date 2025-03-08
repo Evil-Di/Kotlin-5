@@ -13,6 +13,17 @@ object Taz: Car {
     override val color: String = "Ржавый"
 
     /**
+     * Доступ к топливному баку
+     */
+    override val tankMouth = object: TankMouth() {
+        /*fun fuel(liters: Int) {
+            throw NotImplementedError("Взрыв")
+        }*/
+    }
+
+    override fun toString(): String = "Ведро с гвоздями"
+
+    /**
      * Следит за машиной
      */
     override val carOutput: CarOutput

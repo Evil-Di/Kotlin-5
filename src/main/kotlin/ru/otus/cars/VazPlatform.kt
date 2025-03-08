@@ -10,10 +10,13 @@ abstract class VazPlatform(override val color: String) : Car {
     override fun wheelToLeft(degrees: Int) { wheelAngle -= degrees }
 
     // Получить оборудование
-    override fun getEquipment(): String = "Кузов, колеса, движок"
+    override fun getEquipment(): String = "Кузов, колеса, движок, топливный бак"
 
     // Абстрактное свойство двигателя
     abstract val engine: VazEngine
+
+    // Абстрактное свойство топливного бака
+    abstract val tank: FuelTank
 }
 
 // Перечисление двигателей ВАЗ
@@ -24,3 +27,5 @@ sealed class VazEngine {
     data class LADA_2107(override val volume: Int) : VazEngine()
     data class SAMARA_2108(override val volume: Int) : VazEngine()
 }
+
+
